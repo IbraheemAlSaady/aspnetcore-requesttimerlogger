@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{25EA03EA-464D-410A-A974-752950D400C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9C482B6D-3E0B-40EE-93CF-FE2269A6EA1F}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Request.Timer.Logger", "src\Request.Timer.Logger\Request.Timer.Logger.xproj", "{3DA9441A-F730-4EBF-A615-15231B7A3A06}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Request.Timer.Logger.Example", "src\Request.Timer.Logger.Example\Request.Timer.Logger.Example.xproj", "{926CD635-45A1-4CEA-8C3A-AE55A83DF513}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3DA9441A-F730-4EBF-A615-15231B7A3A06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DA9441A-F730-4EBF-A615-15231B7A3A06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DA9441A-F730-4EBF-A615-15231B7A3A06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DA9441A-F730-4EBF-A615-15231B7A3A06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{926CD635-45A1-4CEA-8C3A-AE55A83DF513}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{926CD635-45A1-4CEA-8C3A-AE55A83DF513}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{926CD635-45A1-4CEA-8C3A-AE55A83DF513}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{926CD635-45A1-4CEA-8C3A-AE55A83DF513}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3DA9441A-F730-4EBF-A615-15231B7A3A06} = {25EA03EA-464D-410A-A974-752950D400C4}
+		{926CD635-45A1-4CEA-8C3A-AE55A83DF513} = {25EA03EA-464D-410A-A974-752950D400C4}
+	EndGlobalSection
+EndGlobal
