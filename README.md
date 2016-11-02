@@ -1,11 +1,11 @@
 # Request Timer Logger
 
-Request Timer Logger is a console logger that will check and write the time each request took to be processed.
+Request Timer Logger is a console logger that will check and write the time each request took to be processed with the option of logging the request info into a file.
 
 ##Installation
 
 ```Nuget
-Install-Package Request.Timer.Logger -Pre
+Install-Package Request.Timer.Logger
 ```
 
 ## How to use
@@ -25,18 +25,26 @@ Request Timer Logger comes with default options, however you can override them.
 
 ```C#
  public void Configure(IApplicationBuilder app, IHostingEnvironment env, 
-            ILoggerFactory loggerFactory, IRequestLoggerOptions requestLogger)
+            ILoggerFactory loggerFactory, IRequestLoggerOptions loggerOptions)
 {
-    app.UseRequestTimerLogger();
+    app.UseRequestTimerLogger(); // using the default options
     
-    //requestLogger.WarningMilliseconds = 1000;
-    //requestLogger.ErrorMilliseconds = 3000;
-    //app.UseRequestTimerLogger(requestLogger); you can also pass the options
+    //SetTimerLoggerOptions(loggerOptions);
+    //app.UseRequestTimerLogger(loggerOptions); passing the options of the logger
+}
+private void SetTimerLoggerOptions(IRequestLoggerOptions options)
+{
+   options.WarningMilliseconds = 1000;
+   options.ErrorMilliseconds = 3000;
+   options.LogToFile = true;
+   options.FilePath = "C:/Logging/defaultapp.log";
 }
 ```
 ### Request Timer Logger Options
 1. **WarningMilliseconds**: it will show a yellow message in the console if the request time took more than the value provided in this porperty (Default "3000")
 2. **ErrorMilliseconds**: it will show a red message in the console if the request time took more than the value provided in this property (Default "5000").
+3. **LogToFile**: a flag to check whether the information should be logged to a file or not (Default false).
+4. **FilePath**: the file path where the request infromation should be logged (Default empty).
 
 ## Contact
 Feel free to drop me an email at ibraheem.al-saady@outlook.com
