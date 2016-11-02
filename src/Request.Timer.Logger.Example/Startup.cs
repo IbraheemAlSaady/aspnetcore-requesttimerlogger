@@ -43,7 +43,7 @@ namespace Request.Timer.Logger.Example
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, 
-            ILoggerFactory loggerFactory, IRequestLoggerOptions requestLoggerOptions)
+            ILoggerFactory loggerFactory, IRequestLoggerOptions timerLoggerOptions)
         {
             //loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             //loggerFactory.AddDebug();
@@ -56,9 +56,8 @@ namespace Request.Timer.Logger.Example
                 app.UseBrowserLink();
 
 
-                requestLoggerOptions.WarningMilliseconds = 1000;
-                requestLoggerOptions.ErrorMilliseconds = 3000;
-                app.UseRequestTimerLogger(requestLoggerOptions);
+                SetTimerLoggerOptions(timerLoggerOptions);
+                app.UseRequestTimerLogger(timerLoggerOptions);
             }
             else
             {
@@ -75,6 +74,14 @@ namespace Request.Timer.Logger.Example
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+        }
+
+        private void SetTimerLoggerOptions(IRequestLoggerOptions options)
+        {
+            options.WarningMilliseconds = 1000;
+            options.ErrorMilliseconds = 3000;
+            options.LogToFile = true;
+            options.FilePath = "C:/Logging/defaultapp.log";
         }
     }
 }

@@ -14,8 +14,8 @@ namespace Request.Timer.Logger.Extensions
 
         public static IApplicationBuilder UseRequestTimerLogger(this IApplicationBuilder builder)
         {
-            Statics.WarningMilliseconds = _DEFAULT_WARNING;
-            Statics.ErrorMilliseconds = _DEFAULT_ERROR;
+            Constants.WarningMilliseconds = _DEFAULT_WARNING;
+            Constants.ErrorMilliseconds = _DEFAULT_ERROR;
 
             return builder.UseMiddleware<RequestTimerLoggerMiddleware>();
         }
@@ -23,8 +23,10 @@ namespace Request.Timer.Logger.Extensions
         public static IApplicationBuilder UseRequestTimerLogger(this IApplicationBuilder builder,
             IRequestLoggerOptions options)
         {
-            Statics.WarningMilliseconds = options.WarningMilliseconds;
-            Statics.ErrorMilliseconds = options.ErrorMilliseconds;
+            Constants.WarningMilliseconds = options.WarningMilliseconds;
+            Constants.ErrorMilliseconds = options.ErrorMilliseconds;
+            Constants.LogToFile = options.LogToFile;
+            Constants.FilePath = options.FilePath ?? "";
 
             return builder.UseMiddleware<RequestTimerLoggerMiddleware>();
         }
