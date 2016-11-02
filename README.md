@@ -1,6 +1,6 @@
 # Request Timer Logger
 
-Request Timer Logger is a console logger that will check and write the time each request took to be processed with the option of logging the request info into a file.
+Request Timer Logger is a console logger that will check and write the time each request took to be processed with the option of logging the request info into a file in a json format.
 
 ##Installation
 
@@ -47,4 +47,6 @@ private void SetTimerLoggerOptions(IRequestLoggerOptions options)
 4. **FilePath**: the file path where the request infromation should be logged (Default "empty").
 
 ## Contact
+Check my other json logger repo for the whole request information [here](https://github.com/IbraheemAlSaady/aspnetcore-sandy)
+
 Feel free to drop me an email at ibraheem.al-saady@outlook.com
