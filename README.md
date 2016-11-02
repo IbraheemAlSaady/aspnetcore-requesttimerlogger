@@ -43,8 +43,8 @@ private void SetTimerLoggerOptions(IRequestLoggerOptions options)
 ### Request Timer Logger Options
 1. **WarningMilliseconds**: it will show a yellow message in the console if the request time took more than the value provided in this porperty (Default "3000")
 2. **ErrorMilliseconds**: it will show a red message in the console if the request time took more than the value provided in this property (Default "5000").
-3. **LogToFile**: a flag to check whether the information should be logged to a file or not (Default false).
-4. **FilePath**: the file path where the request infromation should be logged (Default empty).
+3. **LogToFile**: a flag to check whether the information should be logged to a file or not (Default "false").
+4. **FilePath**: the file path where the request infromation should be logged (Default "empty").
 
 ## Contact
 Feel free to drop me an email at ibraheem.al-saady@outlook.com
