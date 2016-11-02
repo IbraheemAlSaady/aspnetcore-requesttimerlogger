@@ -34,6 +34,9 @@ Request Timer Logger comes with default options, however you can override them.
     //app.UseRequestTimerLogger(requestLogger); you can also pass the options
 }
 ```
+### Request Timer Logger Options
+1. **WarningMilliseconds**: it will show a yellow message in the console if the request time took more than the value provided in this porperty (Default "3000")
+2. **ErrorMilliseconds**: it will show a red message in the console if the request time took more than the value provided in this property (Default "5000").
 
 ## Contact
 Feel free to drop me an email at ibraheem.al-saady@outlook.com
